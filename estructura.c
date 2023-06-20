@@ -1,29 +1,80 @@
 #include <stdio.h>
 
-int main(){
+struct Alumno {
 
-struct persona
+    char nombre[100];
 
+    char direccion[100];
 
-{
-
-    int matricula;
-
-    char nombre[20];
-
-    char direccion[50];
-
-    char carrera[25];
+    char carrera[100];
 
     float promedio;
 
+};
+int main() {
+
+  // se ingresa la cantidad de alumnos
+
+    struct Alumno alumnos[3];
+
+    for (int i = 0; i < 3; i++) {
     
 
-}alumno1={1500,"juan","Quito","Software",9.2};
+        printf("Ingrese los datos del alumno %d:\n", i+1);
+      
 
-printf("%d %s %s %s %f",alumno1.matricula, alumno1.nombre, alumno1.direccion, alumno1.carrera, alumno1.promedio);
+       
+        printf("Nombre: ");
 
-return 0;
+        scanf("%s", alumnos[i].nombre);
 
+        fflush(stdin);
+      
+
+        
+
+        printf("Direccion: ");
+
+        gets(alumnos[i].direccion);
+      
+
+        
+
+        printf("Carrera: ");
+
+        gets(alumnos[i].carrera);
+      
+
+        
+        printf("Promedio: ");
+
+        scanf("%f", &alumnos[i].promedio);
+
+        fflush(stdin);
+      
+
+        printf("\n");
+
+    }
+
+
+    printf("Datos de los alumnos:\n");
+
+    for (int i = 0; i < 3; i++) {
+
+        printf("Alumno %d:\n", i+1);
+
+        printf("Nombre: %s\n", alumnos[i].nombre); 
+
+        printf("Direccion: %s\n", alumnos[i].direccion); 
+
+        printf("Carrera: %s\n", alumnos[i].carrera); 
+
+        printf("Promedio: %.2f\n\n", alumnos[i].promedio); 
+
+    }
+    return 0;
 
 }
+
+
